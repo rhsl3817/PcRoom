@@ -23,7 +23,7 @@ public class Reservation {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column
-    private Long id;
+    private int id;
 
     @ManyToOne
     @JoinColumn(name = "member_id",nullable = false,foreignKey = @ForeignKey(name ="FK_MEMBER_TB_RESERVATION"))
