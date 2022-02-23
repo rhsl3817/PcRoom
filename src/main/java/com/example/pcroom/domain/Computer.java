@@ -26,9 +26,9 @@ public class Computer {
     private Long id;
 
     @Column(nullable = false)
-    private int operationStatus;
+    private Boolean operationStatus;
 
-    @OneToMany(mappedBy = "computer", cascade = CascadeType.REMOVE)
+    @OneToMany(mappedBy = "computer")
     private List<Reservation> reservations;
 }
 

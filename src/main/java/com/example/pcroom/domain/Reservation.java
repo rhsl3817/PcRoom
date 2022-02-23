@@ -25,19 +25,19 @@ public class Reservation {
     @Column
     private Long id;
 
-    @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.MERGE)
+    @ManyToOne
     @JoinColumn(name = "member_id",nullable = false,foreignKey = @ForeignKey(name ="FK_MEMBER_TB_RESERVATION"))
     private Member member;
 
-    @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.MERGE)
+    @ManyToOne
     @JoinColumn(name = "computer_id",nullable = false,foreignKey = @ForeignKey(name ="FK_COMPUTER_TB_RESERVATION"))
     private Computer computer;
 
-    @Column(nullable = false)
+    @Temporal(TemporalType.TIMESTAMP)
     private Date startDate;
 
-    @Column(nullable = false)
-    private Date endtDate;
+    @Temporal(TemporalType.TIMESTAMP)
+    private Date endDate;
 
     @Column(nullable = false)
     private int totalPrice;

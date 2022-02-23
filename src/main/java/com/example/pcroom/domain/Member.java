@@ -31,16 +31,15 @@ public class Member {
     private String name;
 
     @Column(nullable = false)
-    private String pw;
+    private String password;
 
-    @Column(nullable = false)
+    @Temporal(TemporalType.TIMESTAMP)
     private Date birth;
 
     @CreationTimestamp
     @Temporal(TemporalType.TIMESTAMP)
-    @Column(nullable = false)
     private Date createDate;
 
-    @OneToMany(mappedBy = "member", cascade = CascadeType.REMOVE)
+    @OneToMany(mappedBy = "member")
     private List<Reservation> reservations;
 }
